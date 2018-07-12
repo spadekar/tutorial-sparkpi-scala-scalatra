@@ -24,7 +24,7 @@ resolvers in ThisBuild ++= Seq( "Sonatype releases" at "https://oss.sonatype.org
 
 // see project/Dependencies.scala for dependency management
 libraryDependencies ++= slf4j ++ logback ++ scalatra ++ scalaTest ++ spark ++ sparkTestBase
-mainClass in(Compile, run) := Some( "io.radanalytics.Main" )
+mainClass in(Compile, run) := Some( "io.radanalytics.examples.scalatra.sparkpi.Main" )
 
 assemblyMergeStrategy in assembly := {
     case PathList( "META-INF", "MANIFEST.MF" ) => MergeStrategy.discard
