@@ -16,10 +16,9 @@ object Main {
         context.setResourceBase( "src/main/webapp" )
         context.setInitParameter( ScalatraListener.LifeCycleKey, "io.radanalytics.examples.scalatra.sparkpi.ScalatraInit" ) // scalatra uses some magic defaults I don't like
         context.addEventListener( new ScalatraListener )
-        context.addServlet( classOf[ DefaultServlet ], "/" )
+        context.addServlet( classOf[ DefaultServlet ], "/" ) // handles empty context root
 
         server.setHandler( context )
-
         server.start()
         server.join()
     }
