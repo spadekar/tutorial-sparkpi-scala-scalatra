@@ -1,4 +1,4 @@
-package io.radanalytics
+package io.radanalytics.examples.scalatra.sparkpi
 
 import javax.servlet.ServletContext
 import org.scalatra.LifeCycle

@@ -9,7 +9,7 @@ object Dependencies {
     val scalatraVersion = "2.5.4"
     val jettyWebappVersion = "9.2.19.v20160908"
     val servletApiVersion = "3.1.0"
-
+    val sparkTestBaseVersion = "2.2.0_0.8.0"
 
     val slf4j = Seq( "org.slf4j" % "slf4j-api" % slf4jVersion )
 
@@ -22,4 +22,10 @@ object Dependencies {
                         "org.scalatra" %% "scalatra-scalatest" % scalatraVersion % "test",
                         "org.eclipse.jetty" % "jetty-webapp" % jettyWebappVersion,
                         "javax.servlet" % "javax.servlet-api" % servletApiVersion )
+
+    val spark = Seq( "org.apache.spark" %% "spark-core" % sparkVersion % "provided" )
+
+    val sparkTestBase = Seq( "com.holdenkarau" %% "spark-testing-base" % sparkTestBaseVersion % "test" )
+
+
 }

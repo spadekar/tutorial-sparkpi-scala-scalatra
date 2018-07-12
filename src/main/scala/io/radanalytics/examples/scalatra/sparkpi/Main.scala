@@ -1,4 +1,4 @@
-package io.radanalytics
+package io.radanalytics.examples.scalatra.sparkpi
 
 import org.eclipse.jetty.server.Server
 import org.eclipse.jetty.servlet.DefaultServlet
@@ -11,16 +11,15 @@ object Main {
         val port = 8080 //TODO - do I need to make the port configurable/dynamic?
         val server = new Server( port )
         val context = new WebAppContext()
-        
+
         context.setContextPath( "/" )
         context.setResourceBase( "src/main/webapp" )
-        // Scalatra uses some defaults I don't like: http://scalatra.org/getting-started/project-structure.html
-        context.setInitParameter( ScalatraListener.LifeCycleKey, "io.radanalytics.ScalatraInit" )
+        context.setInitParameter( ScalatraListener.LifeCycleKey, "io.radanalytics.examples.scalatra.sparkpi.ScalatraInit" ) // scalatra uses some magic defaults I don't like
         context.addEventListener( new ScalatraListener )
         context.addServlet( classOf[ DefaultServlet ], "/" )
-        
+
         server.setHandler( context )
-        
+
         server.start()
         server.join()
     }
