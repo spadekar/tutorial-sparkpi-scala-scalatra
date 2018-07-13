@@ -4,7 +4,7 @@ object Dependencies {
 
     val slf4jVersion = "1.7.5"
     val logbackVersion = "1.2.3"
-    val sparkVersion = "2.2.0"
+    val sparkVersion = "2.3.0"
     val scalaTestVersion = "3.0.4"
     val scalatraVersion = "2.5.4"
     val jettyWebappVersion = "9.2.19.v20160908"

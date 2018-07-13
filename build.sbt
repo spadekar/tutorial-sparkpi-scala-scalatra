@@ -6,13 +6,11 @@ name := "tutorial-sparkpi-scala-scalatra"
 version := "0.0.1-SNAPSHOT"
 scalaVersion in ThisBuild := "2.11.11"
 
-enablePlugins( JavaAppPackaging )
-enablePlugins( ScalatraPlugin )
-
 // SparkTestBase configs
 // reccommended from: https://github.com/holdenk/spark-testing-base/blob/master/README.md
 // fork in Test := true
 // javaOptions ++= Seq( "-Xms512M", "-Xmx2048M", "-XX:MaxMetaspace=1024M", "-XX:+CMSClassUnloadingEnabled" )
+
 
 resolvers += Resolver.sbtPluginRepo( "releases" )
 resolvers += Classpaths.typesafeReleases
@@ -21,10 +19,13 @@ resolvers in ThisBuild ++= Seq( "Sonatype releases" at "https://oss.sonatype.org
                                 "Maven Central" at "https://repo1.maven.org/maven2/",
                                 "Typesafe repository" at "http://repo.typesafe.com/typesafe/releases/" )
 
+mainClass in(Compile, run) := Some( "io.radanalytics.examples.scalatra.sparkpi.Main" )
+
+enablePlugins( JavaAppPackaging )
+enablePlugins( ScalatraPlugin )
 
 // see project/Dependencies.scala for dependency management
 libraryDependencies ++= slf4j ++ logback ++ scalatra ++ scalaTest ++ spark ++ sparkTestBase
-mainClass in(Compile, run) := Some( "io.radanalytics.examples.scalatra.sparkpi.Main" )
 
 assemblyMergeStrategy in assembly := {
     case PathList( "META-INF", "MANIFEST.MF" ) => MergeStrategy.discard
