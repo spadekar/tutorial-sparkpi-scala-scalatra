@@ -27,6 +27,10 @@ enablePlugins( ScalatraPlugin )
 // see project/Dependencies.scala for dependency management
 libraryDependencies ++= slf4j ++ logback ++ scalatra ++ scalaTest ++ spark ++ sparkTestBase
 
+
+// don't run tests when build the fat jar, use sbt test instead for that (takes too long when building the image)
+test in assembly := {}
+
 assemblyMergeStrategy in assembly := {
     case PathList( "META-INF", "MANIFEST.MF" ) => MergeStrategy.discard
     case PathList( "reference.conf" ) => MergeStrategy.concat
