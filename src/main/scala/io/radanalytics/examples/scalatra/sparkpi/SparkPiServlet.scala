@@ -7,6 +7,7 @@ class SparkPiServlet extends ScalatraServlet {
     get( "/sparkpi" ) {
         val spark = new SparkContext( new SparkConf().setAppName("Radanalytics IO Scakatra Tutorial") )
         val sparkPi = new SparkPI( spark,2 ).calculate()
+        spark.stop()
         Ok( "Pi is roughly $sparkPi" )
     }
 }
