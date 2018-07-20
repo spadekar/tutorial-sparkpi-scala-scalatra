@@ -1,12 +1,12 @@
 # My First Radanalytics App - Scala with Scalatra
-This application exposes a simple web service that servers (GET) requests that will use Apache Spark to rougly calculate the value of π. This code is based on the https://github.com/apache/spark/blob/master/examples/src/main/scala/org/apache/spark/examples/SparkPi.scala[Spark PI Example] that is distributed with the Spark project. It is a tutorial application to show how to get started using Scala with the https://radanalytics.io[Radanalytics platform], and is intended to be deployed to Openshift.
+This application exposes a simple web service that servers (GET) requests that will use Apache Spark to rougly calculate the value of π. This code is based on the [Spark PI Example](https://github.com/apache/spark/blob/master/examples/src/main/scala/org/apache/spark/examples/SparkPi.scala) that is distributed with the Spark project. It is a tutorial application to show how to get started using Scala with the [Radanalytics platform](https://radanalytics.io), and is intended to be deployed to Openshift.
 
-In addition to demonstrating how to deploy a simple Scala microservice to Openshift, it also contains examples of how to unit test Spark jobs using the https://github.com/holdenk/spark-testing-base[Spark Testing Base] project.
+In addition to demonstrating how to deploy a simple Scala microservice to Openshift, it also contains examples of how to unit test Spark jobs using the [Spark Testing Base](https://github.com/holdenk/spark-testing-base) project.
 
 ## Quick start
 It is a prerequesite that you have an Openshift cluster running and are logged in with the `oc` command line tool.
 
-1. Setup the project and import the http://radanalytics.io[Radanalytics] resources
+1. Setup the project and import the [Radanalytics](http://radanalytics.io) resources
    ```bash
    oc new-project oshinko
    oc create -f https://radanalytics.io/resources.yaml
