@@ -23,7 +23,9 @@ object Dependencies {
                         "org.eclipse.jetty" % "jetty-webapp" % jettyWebappVersion,
                         "javax.servlet" % "javax.servlet-api" % servletApiVersion )
 
-    val spark = Seq( "org.apache.spark" %% "spark-core" % sparkVersion % "provided" )
+    val spark = Seq( "org.apache.spark" %% "spark-core" % sparkVersion % "provided",
+                     "org.apache.spark" %% "spark-sql" % sparkVersion % "provided",
+                     "org.mongodb.spark" %% "mongo-spark-connector" % "2.3.3")
 
     val sparkTestBase = Seq( "com.holdenkarau" %% "spark-testing-base" % sparkTestBaseVersion % "test" )
 
